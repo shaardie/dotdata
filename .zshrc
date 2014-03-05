@@ -12,6 +12,7 @@ path=(	/sbin
 			/usr/local/sbin
 			/usr/local/bin
 			/usr/local/texlive/2013/bin/x86_64-linux
+			/usr/local/tg/
 			/home/sven/devel/cryptmount
 			$path)
 
@@ -69,6 +70,8 @@ alias la='ls -a --color=auto'
 alias lsd="ls -d */"		# List only the directory.
 alias mplayer='mplayer -ass-border-color 00000000 -subfont-outline 4'
 alias grep='grep --color'
+alias irssi='TERM=screen irssi'
+alias weechat='TERM=screen weechat'
 
 #---------------
 # Set completion

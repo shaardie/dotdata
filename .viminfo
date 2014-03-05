@@ -8,114 +8,114 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/gcry_cipher
+~MSle0~/asdasdasd
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:wq
-:w
 :q
-:tabedit crypt.c
+:setlocal spell spelllang=en
+:! firefox out.html
+:! firefox ircrypt-protocol.md
+:!pandoc -s -i ircrypt-protocol.md -o out.html
+:wq
+:spellinfo
+:w
+:tabedit ../../testarea/test.py
+:TlistToggle
+:'<,'>q
+:tabedit .weechat/python/autoload/ircrypt.py
+:tabedit .weechat/python/autoload/test.py
 :q!
-:tabedit import.c
+:set wrapmargin=0
+:set wrapmargin=90
+:set wrapmargin =  90
+:set wrapmargin 90
+:2CRY
+:W
+:T
+:Q
+:WQ
+:tabedit ircrypt.py
+:x
+:set spell
+:spell
+:nohl
+:s
+:TlistUpdate
+:sa
+:tabedit IRCrypt-weechat.py
+:! python IRCrypt-weechat.py
+:tabedit ~/.irssi.backup/scripts/blowssi.pl
+:tabedit ~/.irssi.backup/
+:tabedit
+:tags
+:tabedit crypt.c
+:tabedit key.c
+:vsplit crypt.c
 :tabedit onetimepad.c
 :tabedit header.h
-:!./opendev
-:! gcc -Wall opendev.c -o opendev
-:syn on
-:syn off
-:vsplit header.h
-:23
-:48
-:tabedit generate.c 
-:tabedit generate.c#
-:Q
-:adadsasdasd
-:tabedit .zshrc
-:tabedit .zshenv
-:tabedit
-:W
-:Wq
-:tabedit generate.c
-:tabedit keycrypt.h
-:tabedit crypt.h
-:qw
-:! ./main
-:! gcc main.c -o main -lsox
-:tabedit README
-:! make test
-:!./onetimepad
-:! make
-:set smarttab
-:set smarttab on
-:set smarttab=on
-:x
-:tabedit generate.h
-:'<,'>q
-:qa!
-:tabedit onetimepad.1
-:tabedit test.c
-:! gcc -Wall test.c -o test
-:!make clean all
-:! man fseek
-:!make
-:w#
-:tabedit aes.h
-:42
+:tabedit key.h
+:tabedit import.c
+:tabedit key.c 
+:tabedit key.c import.c
+:tabedit twofish.h
+:!mv kd.c key.c
+:help move
+:tabedit kd.c
 
 # Search String History (newest to oldest):
-?/gcry_cipher
-?/header
-?/showmode
-?/asdadasd
-? \<-n\>
-?/adasda
-? \<autoload\>
-?/config
-?/aa
-?/password
-?/beschreibung
-?/Besch
-?/usr/bin/env bash
+?/asdasdasd
+?/pass
 ?/asdasd
-? \<cryptsetup\>
-?/keyl
-?/Hd
-?/gcryE
-?/main
-?/start
-?/_start
-?/PASS
-?/16
-?//
-?/asdasda
-?/str
+?/base
+?/hash
+?/ASDASD
+?/cancel
+?/type
+?/UCRY
+?/CIPHER-N
+?/cipher not 
+?/def ircrypt_config_read
+?/global 
+?/ircrypt_config_keys_re
+?/adadsasdasd
+?/ircrypt_config_file
 ?/close
-?/42
-?/adsdasdasd
-?/free(buf)
-?/return 0
-?/error
-?/encheader.pos
-?/keyheader.pos
-?/aöslkdjföaslkdfjsalfdk
-?/Could not write to output file
-?/could not write to output file
-?/keyf
-?/_inp
-?/rw
-?/pos
-?/lsdkjfaösldjkf
-?/* Case: encrypt */
-?/ssl
-?/adsasdasd
-?/malloc
-? }
-?/dasdasdsadas
-?/Cod
-?/codes
+?/anal
+?/sex
+?/mp4
+?/flv
+?/mkv
+?/porn
+?/fuck
+?/wge
+?/redt
+?/exchange
+?/MAX_PART_LEN
+?/300
+?/2cry
+?/if '>2cry-0 ' in args:
+?/2CRY
+?/param arg
+?/param in
+?/htop
+?/WEECHAT_RC_ERROR
+?/info
+?/mute
+?/weechat.cu
+?/ircrypt_config_op
+?/ircrypt_request
+?/accept
+?/ircrypt_keys[
+?/false
+?/ircrypt_pending_r
+?/decline
+?/split
+? \<ircrypt_command_verify\>
+?/ircrypt_rec
+?/notic
 
 # Expression History (newest to oldest):
 
@@ -124,815 +124,716 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
-	sudo
-"1	LINE	0
-	#include <string.h>
+"0	LINE	0
+			'--passphrase-fd', '-'],
+""1	LINE	0
+	The prefix shows
 "2	LINE	0
-	#include "generate.h"
+	
 "3	LINE	0
-	#include <openssl/rand.h>
+			'--passphrase-fd', '-'],
 "4	LINE	0
 	
 "5	LINE	0
-		f
+		return weechat.WEECHAT_RC_OK
 "6	LINE	0
-	
+		weechat.hook_process('echo %s\n%s | gpg2 --batch --no-tty --quiet --symmetric --cipher-algo %s --passphrase-fd - ' % (key, message, cipher), 0, 'my_process_cb', '')
 "7	LINE	0
-	
+															
 "8	LINE	0
-		uint8_t * buf;
+														
 "9	LINE	0
-		header_t h;
+			'--passphrase-fd', '-'],
 "-	CHAR	0
-	 
+	'
 
 # File marks:
-'0  9  5  ~/devel/cryptmount/cumount
-'1  30  0  ~/devel/cryptmount/cmount
-'2  11  1  ~/devel/cryptmount/cumount
-'3  18  4  ~/devel/cryptmount/cmount
-'4  31  0  ~/devel/onetimepad/import.c
-'5  59  12  ~/devel/onetimepad/onetimepad.c
-'6  2  14  ~/devel/onetimepad/import.h
-'7  36  19  ~/devel/onetimepad/onetimepad.c
-'8  32  0  ~/devel/onetimepad/header.h
-'9  7  7  ~/devel/testingarea/opendev.c
+'0  34  8  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+'1  43  55  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+'2  18  4  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+'3  79  0  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+'4  1  21  ~/devel/IRCrypt/documentation/.git/COMMIT_EDITMSG
+'5  164  19  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+'6  47  66  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+'7  59  1  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+'8  22  0  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+'9  31  37  ~/.weechat/python/autoload/test.py
 
 # Jumplist (newest first):
--'  9  5  ~/devel/cryptmount/cumount
--'  11  1  ~/devel/cryptmount/cumount
--'  30  0  ~/devel/cryptmount/cmount
--'  18  2  ~/devel/cryptmount/cmount
--'  1  0  ~/devel/cryptmount/cumount
--'  33  0  ~/devel/cryptmount/cmount
--'  31  0  ~/devel/onetimepad/import.c
--'  3  0  ~/devel/onetimepad/import.c
--'  59  12  ~/devel/onetimepad/onetimepad.c
--'  36  4  ~/devel/onetimepad/onetimepad.c
--'  2  14  ~/devel/onetimepad/import.h
--'  1  0  ~/devel/onetimepad/import.h
--'  19  28  ~/devel/onetimepad/onetimepad.c
--'  18  20  ~/devel/onetimepad/onetimepad.c
--'  30  4  ~/devel/onetimepad/header.h
--'  21  3  ~/devel/onetimepad/generate.c
--'  10  1  ~/devel/onetimepad/generate.c
--'  32  0  ~/devel/onetimepad/header.h
--'  23  0  ~/devel/onetimepad/header.h
--'  7  7  ~/devel/testingarea/opendev.c
--'  19  1  ~/devel/testingarea/opendev.c
--'  1  0  ~/devel/testingarea/opendev
--'  1  0  ~/devel/testingarea/text
--'  17  1  ~/devel/testingarea/opendev.c
--'  1  0  ~/devel/testingarea/opendev.c
--'  1  1  ~/devel/testingarea
--'  1  17  ~/devel/opendev.c
--'  100  6  ~/devel/onetimepad/generate.c
--'  9  13  ~/devel/onetimepad/import.c
--'  1  0  ~/devel/onetimepad/import.c
--'  11  0  ~/devel/onetimepad/README
--'  1  0  ~/devel/onetimepad/README
--'  19  0  ~/devel/onetimepad/README
--'  7  1  ~/devel/onetimepad/generate.c
--'  34  0  ~/.tmux.conf
--'  39  0  ~/.tmux.conf
--'  13  0  ~/.tmux.conf
--'  817  66  /usr/include/gcrypt.h
--'  819  5  /usr/include/gcrypt.h
--'  814  15  /usr/include/gcrypt.h
--'  813  35  /usr/include/gcrypt.h
--'  810  35  /usr/include/gcrypt.h
--'  809  7  /usr/include/gcrypt.h
--'  1  0  /usr/include/gcrypt.h
--'  1  0  ~/devel
--'  37  0  ~/.zshrc
--'  1  0  ~/.zshrc
--'  42  0  ~/.vimrc
--'  61  0  ~/.vimrc
--'  54  20  ~/.vimrc
+-'  34  8  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+-'  43  0  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+-'  79  0  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+-'  18  4  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  3  0  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  2  0  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  650  0  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  888  1  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  164  0  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+-'  1  21  ~/devel/IRCrypt/documentation/.git/COMMIT_EDITMSG
+-'  3  0  ~/devel/IRCrypt/documentation/.git/COMMIT_EDITMSG
+-'  47  0  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+-'  59  1  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+-'  22  0  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+-'  35  0  ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+-'  31  37  ~/.weechat/python/autoload/test.py
+-'  45  4  ~/.weechat/python/autoload/test.py
+-'  1  0  .weechat/python/autoload/test.py
+-'  841  0  ~/.weechat/python/autoload/ircrypt.py
+-'  838  1  ~/.weechat/python/autoload/ircrypt.py
+-'  44  28  ~/.weechat/python/autoload/test.py
+-'  47  0  ~/.weechat/python/autoload/test.py
+-'  53  0  ~/.weechat/python/autoload/test.py
+-'  35  0  ~/.weechat/python/autoload/test.py
+-'  22  4  ~/__Tag_List__
+-'  48  0  ~/__Tag_List__
+-'  2  0  ~/__Tag_List__
+-'  427  13  ~/.weechat/python/autoload/ircrypt.py
+-'  256  0  ~/.weechat/python/autoload/ircrypt.py
+-'  25  39  ~/.weechat/python/autoload/test.py
+-'  33  1  ~/.weechat/python/autoload/test.py
+-'  3  39  ~/devel/IRCrypt/ircrypt-weechat/.git/COMMIT_EDITMSG
+-'  1  0  ~/devel/IRCrypt/ircrypt-weechat/.git/COMMIT_EDITMSG
+-'  93  4  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  96  20  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  50  0  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  214  30  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  293  2  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  7  0  ~/devel/IRCrypt/ircrypt-weechat/.git/COMMIT_EDITMSG
+-'  281  4  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  62  4  ~/__Tag_List__
+-'  54  0  ~/__Tag_List__
+-'  53  0  ~/__Tag_List__
+-'  232  4  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  233  4  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  1  0  ~/devel/IRCrypt/ircrypt-weechat
+-'  11  4  ~/devel/IRCrypt/__Tag_List__
+-'  3  0  ~/devel/IRCrypt/__Tag_List__
+-'  2  0  ~/devel/IRCrypt/__Tag_List__
+-'  978  0  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  14  133  ~/devel/IRCrypt/documentation/alternative ircrypt protocol.md
+-'  1  0  ~/devel/IRCrypt/documentation/alternative ircrypt protocol.md
+-'  33  410  ~/devel/IRCrypt/documentation/alternative ircrypt protocol.txt
+-'  1  0  ~/devel/IRCrypt/documentation/alternative ircrypt protocol.txt
+-'  951  3  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  70  22  ~/devel/IRCrypt/__Tag_List__
+-'  49  0  ~/devel/IRCrypt/__Tag_List__
+-'  48  0  ~/devel/IRCrypt/__Tag_List__
+-'  876  7  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  976  0  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  975  1  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  123  4  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  97  0  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  315  1  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  1  0  /usr/local/tg/tg.pub
+-'  15  16  ~/.zshrc
 -'  117  0  ~/.zshrc
--'  107  47  ~/.zshrc
--'  1  0  ~/.vimrc_b
--'  25  0  ~/.vimrc_b
--'  2  0  ~/.vimrc_b
--'  1  0  ~/.vimrc
--'  49  0  ~/.vimrc
--'  3  0  ~/.esd_auth
--'  1  0  ~/.esd_auth
--'  1  0  ~/.vim
--'  6  0  ~/.zshrc
--'  5  0  ~/.zshrc
--'  1  0  ~/.zshenv
--'  104  0  ~/.zshrc
--'  95  0  ~/.zshrc
--'  118  0  ~/.zshrc
--'  88  0  ~/.zshrc
--'  106  0  ~/.zshrc
--'  1  0  ~/.zshrc#
--'  93  0  ~/.zshrc
--'  84  0  ~/.zshrc
--'  100  0  ~/.zshrc
--'  85  0  ~/.zshrc
--'  47  0  ~/.zshrc
--'  79  0  ~/.zshrc
--'  77  0  ~/.zshrc
--'  73  1  ~/.zshrc
--'  75  0  ~/.zshrc
--'  62  0  ~/.zshrc
--'  60  0  ~/.zshrc
--'  1  0  ~/Documents/Vorlesung - Optimierungsalgorithmen und Anwendungen/Uebungsblatt06/P5/sven-ameise/.zshrc
--'  1  0  ~/Documents/Bewerbung - Universität/.zshrc
--'  1  0  ~/devel/navy-project/.zshrc
--'  1  9  ~/.zshenv_backup
--'  1  0  ~/devel/cryptmount/cmount
--'  1  0  ~/.tmux.conf
--'  6  15  ~/devel/term
--'  1  0  ~/devel/term
--'  1  0  ~/term
--'  39  59  ~/devel/onetimepad/onetimepad.c
--'  45  9  ~/devel/onetimepad/onetimepad.c
--'  50  12  ~/devel/onetimepad/onetimepad.c
--'  55  9  ~/devel/onetimepad/onetimepad.c
--'  74  6  ~/devel/onetimepad/onetimepad.c
--'  83  9  ~/devel/onetimepad/onetimepad.c
--'  92  9  ~/devel/onetimepad/onetimepad.c
--'  7  0  ~/devel/onetimepad/onetimepad.c
--'  44  0  ~/devel/onetimepad/generate.c
+-'  150  2  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  185  4  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  143  0  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  142  0  ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+-'  255  4  ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+-'  4031  8  ~/.zsh_history
+-'  4030  8  ~/.zsh_history
+-'  2608  9  ~/.zsh_history
+-'  340  72  ~/.zsh_history
+-'  10175  22  ~/.zsh_history
+-'  10171  27  ~/.zsh_history
+-'  10169  27  ~/.zsh_history
+-'  10168  232  ~/.zsh_history
+-'  10167  27  ~/.zsh_history
+-'  10166  246  ~/.zsh_history
+-'  10152  225  ~/.zsh_history
+-'  10151  20  ~/.zsh_history
+-'  10150  233  ~/.zsh_history
+-'  10149  20  ~/.zsh_history
+-'  10148  239  ~/.zsh_history
+-'  10147  20  ~/.zsh_history
+-'  10146  236  ~/.zsh_history
+-'  10145  238  ~/.zsh_history
+-'  10144  20  ~/.zsh_history
+-'  10143  238  ~/.zsh_history
+-'  10142  20  ~/.zsh_history
+-'  10141  236  ~/.zsh_history
+-'  9954  0  ~/.zsh_history
+-'  8676  0  ~/.zsh_history
+-'  333  0  ~/.zsh_history
+-'  233  0  ~/.zsh_history
 
 # History of marks within files (newest to oldest):
 
-> ~/devel/cryptmount/cumount
-	"	9	5
-	^	9	6
-	.	9	5
-	+	8	1
-	+	9	1
-	+	11	1
-	+	8	5
-	+	9	5
-
-> ~/devel/cryptmount/cmount
-	"	30	0
-	^	30	1
-	.	30	1
-	+	30	1
-	+	23	4
-	+	23	4
-	+	19	6
-	+	17	8
-	+	19	11
-	+	23	8
-	+	30	1
-
-> ~/devel/onetimepad/import.c
-	"	31	0
-	^	31	0
-	.	31	0
-	+	2	0
-	+	5	9
-	+	39	0
-	+	37	3
-	+	39	0
-	+	41	0
-	+	45	0
-	+	45	0
-	+	47	0
-	+	47	0
-	+	47	0
-	+	47	0
-	+	47	0
-	+	47	0
-	+	47	0
-	+	47	0
-	+	39	0
-	+	39	0
-	+	39	0
-	+	7	0
-	+	5	31
-	+	7	0
-	+	19	0
-	+	20	116
-	+	21	23
-	+	26	0
-	+	25	0
-	+	32	3
-	+	19	3
-	+	21	49
-	+	20	41
-	+	21	61
-	+	26	7
-	+	27	51
-	+	34	21
-	+	14	9
-	+	15	42
-	+	17	0
-	+	34	4
+> ~/devel/IRCrypt/documentation/ircrypt-protocol.md
+	"	34	8
+	^	29	27
+	.	68	0
+	+	123	69
+	+	121	72
+	+	145	76
+	+	146	13
+	+	147	0
+	+	146	40
+	+	150	22
+	+	106	20
+	+	152	0
+	+	153	0
+	+	165	32
+	+	165	0
+	+	90	0
+	+	95	0
+	+	142	0
+	+	143	0
+	+	139	0
+	+	135	5
+	+	163	12
+	+	165	0
+	+	165	172
+	+	124	26
+	+	165	0
+	+	165	13
+	+	108	2
+	+	165	0
+	+	108	3
+	+	92	0
+	+	108	11
+	+	110	14
+	+	108	12
+	+	112	51
+	+	112	79
+	+	111	76
+	+	112	79
+	+	112	79
+	+	113	103
+	+	115	22
+	+	113	88
+	+	154	0
+	+	155	0
+	+	156	65
+	+	113	72
+	+	156	58
+	+	113	66
+	+	156	49
+	+	113	61
+	+	115	0
+	+	117	30
+	+	160	0
+	+	156	54
+	+	159	6
+	+	161	31
+	+	159	41
 	+	35	4
-	+	36	3
-	+	35	3
-	+	34	22
-	+	39	0
-	+	39	0
-	+	38	2
-	+	14	3
-	+	38	0
-	+	39	23
-	+	22	0
-	+	28	0
-	+	44	0
-	+	3	0
-	+	32	36
-	+	33	0
-	+	31	0
-
-> ~/devel/onetimepad/onetimepad.c
-	"	59	12
-	^	59	13
-	.	59	12
-	+	52	0
-	+	45	54
-	+	44	33
-	+	43	32
-	+	42	32
-	+	41	32
-	+	40	32
-	+	46	54
-	+	47	33
-	+	46	33
-	+	45	33
-	+	44	33
-	+	43	33
-	+	42	33
-	+	41	33
-	+	40	33
-	+	47	37
-	+	48	37
-	+	49	38
-	+	50	67
-	+	49	41
-	+	48	41
-	+	47	42
-	+	46	40
-	+	45	40
-	+	44	40
-	+	43	40
-	+	42	0
-	+	43	0
-	+	41	26
-	+	40	34
-	+	51	47
-	+	52	58
-	+	41	46
-	+	46	64
-	+	47	47
-	+	48	46
-	+	49	48
-	+	51	49
-	+	52	59
-	+	51	49
-	+	49	30
-	+	75	25
-	+	39	62
-	+	55	15
-	+	43	40
-	+	23	13
-	+	28	0
+	+	35	0
+	+	58	67
+	+	159	22
+	+	156	74
+	+	162	0
+	+	38	45
+	+	47	63
+	+	56	55
+	+	58	62
+	+	58	81
+	+	59	56
+	+	81	37
+	+	122	73
+	+	123	57
+	+	124	24
+	+	10	28
+	+	38	37
+	+	16	42
+	+	35	40
+	+	47	66
+	+	58	60
+	+	58	79
+	+	60	34
+	+	60	43
+	+	59	69
+	+	58	82
+	+	56	80
+	+	57	72
+	+	58	82
+	+	59	80
+	+	60	69
+	+	20	14
 	+	21	0
-	+	24	26
-	+	23	33
-	+	24	27
-	+	23	27
-	+	22	27
-	+	21	27
-	+	20	28
-	+	19	0
-	+	20	0
-	+	19	21
-	+	18	21
-	+	17	21
-	+	16	20
-	+	15	21
-	+	18	20
-	+	24	53
-	+	28	0
-	+	25	24
-	+	25	25
-	+	25	56
+	+	47	66
+	+	56	55
+	+	58	79
+	+	59	54
+	+	24	8
+	+	25	0
+	+	23	73
+	+	24	7
+	+	29	26
+	+	28	75
+	+	23	13
+	+	68	0
+
+> ~/devel/IRCrypt/ircrypt-weechat/ircrypt.py
+	"	650	0
+	^	793	69
+	.	793	76
+	+	350	1
+	+	351	0
+	+	350	0
+	+	351	0
+	+	352	0
+	+	353	0
+	+	354	0
+	+	355	0
+	+	350	29
+	+	363	1
+	+	365	1
+	+	364	3
+	+	352	1
+	+	353	2
+	+	354	3
+	+	355	3
+	+	364	24
+	+	365	1
+	+	366	2
+	+	367	3
+	+	368	2
+	+	367	48
+	+	308	0
+	+	309	40
+	+	309	1
+	+	310	1
+	+	311	1
+	+	312	1
+	+	314	1
+	+	313	1
+	+	315	0
+	+	306	69
+	+	294	0
+	+	291	20
+	+	292	40
+	+	221	4
+	+	208	22
+	+	211	29
+	+	219	17
+	+	219	13
+	+	219	18
+	+	220	0
+	+	208	51
+	+	219	0
+	+	210	0
+	+	221	0
+	+	211	2
+	+	215	0
+	+	211	0
+	+	208	0
+	+	216	0
+	+	208	36
+	+	209	2
+	+	213	44
+	+	214	30
+	+	293	29
+	+	198	28
+	+	301	17
+	+	194	16
+	+	320	5
+	+	380	22
+	+	458	53
+	+	519	0
+	+	520	0
+	+	574	22
+	+	795	0
+	+	828	30
+	+	828	77
+	+	828	0
+	+	828	30
+	+	681	16
+	+	681	71
+	+	684	0
+	+	687	30
+	+	681	66
+	+	687	13
+	+	519	0
+	+	686	0
+	+	687	0
+	+	744	0
+	+	744	0
+	+	744	4
+	+	744	0
+	+	737	40
+	+	744	0
+	+	820	48
+	+	820	39
+	+	828	0
+	+	868	0
+	+	876	0
+	+	874	23
+	+	868	21
+	+	681	76
+	+	737	0
+	+	744	0
+	+	737	0
+	+	740	0
+	+	737	40
+	+	639	67
+	+	793	76
+
+> ~/devel/IRCrypt/ircrypt-weechat/__Tag_List__
+	"	18	4
+	^	112	24
+	.	49	0
+	+	2217	0
+	+	2211	0
+	+	2203	0
+	+	2194	0
+	+	2185	0
+	+	2165	0
+	+	2145	0
+	+	2125	0
+	+	2105	0
+	+	2085	0
+	+	2062	0
+	+	2061	0
+	+	2035	0
+	+	2006	0
+	+	1977	0
+	+	1948	0
+	+	1919	0
+	+	1891	0
+	+	1860	0
+	+	1832	0
+	+	1804	0
+	+	1774	0
+	+	1743	0
+	+	1712	0
+	+	1681	0
+	+	1647	0
+	+	1617	0
+	+	1589	0
+	+	1555	0
+	+	1520	0
+	+	1485	0
+	+	1449	0
+	+	1413	0
+	+	1384	0
+	+	1348	0
+	+	1304	0
+	+	1260	0
+	+	1216	0
+	+	1171	0
+	+	1126	0
+	+	1081	0
+	+	1036	0
+	+	991	0
+	+	946	0
+	+	931	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	886	0
+	+	839	0
+	+	792	0
+	+	745	0
+	+	698	0
+	+	651	0
+	+	604	0
+	+	557	0
+	+	511	0
+	+	465	0
+	+	419	0
+	+	373	0
+	+	327	0
+	+	281	0
+	+	235	0
+	+	189	0
+	+	144	0
+	+	143	0
+	+	97	0
+	+	49	0
+
+> ~/devel/testarea/test.py
+	"	10	0
+
+> ~/devel/IRCrypt/documentation/.git/COMMIT_EDITMSG
+	"	1	21
+	^	1	22
+	.	1	21
+	+	3	13
+	+	1	21
+
+> ~/.weechat/python/autoload/test.py
+	"	31	37
+	^	45	17
+	.	37	15
+	+	25	0
 	+	26	0
 	+	27	0
 	+	28	0
-	+	26	25
-	+	27	25
-	+	28	0
-	+	26	45
-	+	27	77
-	+	39	78
-	+	43	42
-	+	58	15
-	+	67	0
-	+	59	19
-	+	60	13
-	+	65	0
-	+	61	40
-	+	64	39
-	+	65	10
-	+	59	20
-	+	60	4
-	+	61	5
-	+	62	5
-	+	63	4
-	+	64	5
-	+	65	12
-	+	66	4
-	+	61	13
-	+	64	13
-	+	37	40
-	+	38	42
-	+	59	12
-
-> ~/devel/onetimepad/import.h
-	"	2	14
-	^	2	15
-	.	2	14
-	+	6	30
-	+	1	14
-	+	2	14
-
-> ~/devel/onetimepad/generate.c
-	"	53	7
-	^	10	15
-	.	21	3
-	+	43	28
-	+	18	21
-	+	87	0
-	+	60	21
-	+	61	58
-	+	59	29
-	+	86	1
-	+	61	3
-	+	60	0
-	+	59	29
-	+	59	42
-	+	60	0
-	+	61	62
-	+	86	9
-	+	86	0
-	+	67	21
-	+	61	19
-	+	61	69
-	+	68	0
-	+	67	4
-	+	68	49
-	+	70	0
-	+	61	37
-	+	61	24
-	+	61	24
-	+	86	0
-	+	72	15
-	+	72	15
-	+	71	61
-	+	72	15
-	+	72	35
-	+	73	0
-	+	72	374
-	+	73	0
-	+	73	0
-	+	72	1184
-	+	73	0
-	+	85	0
-	+	74	53
-	+	75	0
-	+	77	3
-	+	76	37
-	+	79	0
-	+	83	0
-	+	82	51
-	+	81	4
-	+	82	4
-	+	80	30
-	+	79	31
-	+	81	22
-	+	82	18
-	+	80	0
-	+	81	5
-	+	82	5
-	+	81	6
-	+	82	6
-	+	79	56
-	+	85	0
-	+	60	5
-	+	60	8
-	+	59	22
-	+	59	22
-	+	59	41
-	+	86	0
-	+	60	0
-	+	61	26
-	+	61	31
-	+	61	32
-	+	61	26
-	+	60	0
-	+	61	0
-	+	71	79
-	+	63	6
-	+	66	25
-	+	74	50
-	+	79	57
-	+	7	0
-	+	12	1
-	+	13	1
-	+	14	1
-	+	15	1
-	+	16	1
-	+	21	3
-
-> ~/devel/onetimepad/header.h
-	"	29	7
-	^	30	6
-	.	30	5
-	+	52	0
-	+	54	0
-	+	56	18
-	+	55	17
-	+	56	19
-	+	51	0
-	+	51	0
+	+	19	0
+	+	20	1
+	+	21	1
+	+	22	0
+	+	23	1
 	+	24	0
-	+	25	0
-	+	25	15
-	+	25	17
-	+	24	3
-	+	25	16
-	+	25	4
-	+	25	14
-	+	25	8
-	+	25	6
-	+	25	9
-	+	25	3
-	+	24	16
-	+	38	0
-	+	28	0
-	+	38	15
-	+	25	0
-	+	25	0
-	+	24	6
-	+	25	0
-	+	24	15
-	+	25	0
-	+	20	18
-	+	19	0
-	+	15	22
-	+	16	22
-	+	17	22
-	+	28	17
-	+	31	13
-	+	37	1
-	+	31	16
-	+	32	18
-	+	33	0
-	+	33	10
+	+	25	1
+	+	26	1
+	+	27	1
+	+	28	1
+	+	30	0
+	+	31	37
+	+	39	26
+	+	39	3
 	+	32	0
-	+	36	14
-	+	34	26
-	+	35	20
-	+	49	0
-	+	25	0
-	+	49	0
-	+	39	0
-	+	40	15
-	+	41	0
-	+	42	6
-	+	41	8
-	+	38	3
-	+	42	19
-	+	41	18
-	+	50	0
-	+	47	16
-	+	49	3
-	+	50	1
-	+	42	12
-	+	50	9
-	+	42	0
-	+	41	23
-	+	50	24
-	+	19	7
-	+	39	0
-	+	39	0
-	+	19	23
-	+	19	25
-	+	19	24
-	+	19	0
-	+	19	0
-	+	33	14
-	+	38	17
-	+	11	0
-	+	13	0
-	+	19	0
-	+	30	4
-	+	19	7
-	+	21	8
-	+	30	4
-	+	13	0
-	+	10	0
-	+	13	24
-	+	12	26
-	+	13	25
-	+	11	25
-	+	10	25
-	+	30	5
-	+	10	22
-	+	9	26
-	+	10	26
-	+	11	26
-	+	12	26
-	+	13	26
-	+	30	5
-
-> ~/devel/onetimepad/crypt.c
-	"	35	3
-	^	96	40
-	.	96	40
-	+	78	0
-	+	37	0
-	+	37	0
-	+	50	0
-	+	51	0
-	+	52	0
-	+	53	0
-	+	54	0
-	+	55	0
-	+	56	0
-	+	57	0
-	+	58	0
-	+	59	0
-	+	60	0
-	+	61	0
-	+	62	0
-	+	63	59
-	+	50	13
-	+	49	13
-	+	50	12
-	+	49	12
-	+	65	47
-	+	70	48
-	+	96	40
-
-> ~/devel/testingarea/opendev.c
-	"	7	7
-	^	7	8
-	.	7	7
-	+	5	0
-	+	22	0
-	+	4	0
-	+	7	24
-	+	21	2
-	+	7	29
-	+	7	1
-	+	7	12
-	+	7	0
-	+	7	33
-	+	7	6
-	+	7	23
-	+	7	10
-	+	22	0
-	+	7	3
-	+	7	12
-	+	7	10
-	+	7	28
-	+	7	9
-	+	7	31
-	+	7	1
-	+	7	1
-	+	7	9
-	+	7	11
-	+	7	8
-	+	7	26
-	+	7	22
-	+	7	0
-	+	7	1
-	+	7	28
-	+	7	17
-	+	7	23
-	+	15	5
-	+	14	21
-	+	7	3
-	+	20	10
-	+	19	10
-	+	14	22
-	+	18	0
-	+	17	12
-	+	14	11
-	+	15	10
-	+	17	18
-	+	19	9
-	+	7	7
-
-> ~/devel/testingarea/opendev
-	"	1	0
-
-> ~/devel/testingarea/text
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/devel/onetimepad/README
-	"	6	0
-	^	11	0
-	.	1	0
-	+	22	0
-	+	1	17
-	+	13	17
-	+	17	40
-	+	21	0
-	+	19	31
-	+	11	0
-	+	1	0
-
-> ~/devel/opendev.c
-	"	1	17
-	^	1	18
-	.	1	17
-	+	1	17
-
-> ~/.tmux.conf
-	"	34	0
-	^	39	37
-	.	39	36
-	+	8	0
-	+	8	0
-	+	8	0
-	+	12	0
-	+	13	0
-	+	8	0
-	+	11	0
-	+	13	0
-	+	38	29
+	+	28	0
+	+	39	30
+	+	32	14
+	+	39	72
+	+	25	55
+	+	39	41
+	+	32	31
+	+	32	0
+	+	32	12
 	+	39	36
+	+	33	12
+	+	34	19
+	+	39	142
+	+	32	0
+	+	36	60
+	+	36	43
+	+	37	57
+	+	39	60
+	+	37	13
+	+	39	16
+	+	40	13
+	+	41	47
+	+	40	30
+	+	44	53
+	+	41	63
+	+	42	37
+	+	43	28
+	+	44	22
+	+	44	39
+	+	46	0
+	+	44	41
+	+	37	51
+	+	37	15
+	+	37	34
+	+	37	34
+	+	38	0
+	+	37	34
+	+	39	3
+	+	40	3
+	+	41	9
+	+	42	3
+	+	43	3
+	+	44	3
+	+	46	27
+	+	53	0
+	+	37	34
+	+	43	17
+	+	41	30
+	+	42	26
+	+	53	0
+	+	52	0
+	+	36	0
+	+	37	1
+	+	38	2
+	+	39	2
+	+	40	2
+	+	41	3
+	+	42	3
+	+	43	3
+	+	44	3
+	+	46	2
+	+	37	10
+	+	44	30
+	+	47	0
+	+	44	29
+	+	45	13
+	+	47	0
+	+	44	29
+	+	37	27
+	+	37	23
+	+	37	22
+	+	37	31
+	+	37	6
+	+	37	18
+	+	37	4
+	+	36	5
+	+	51	0
+	+	50	0
+	+	48	59
+	+	49	40
+	+	37	15
 
-> /usr/include/gcrypt.h
-	"	817	66
+> .weechat/python/autoload/test.py
+	"	1	0
 
-> ~/devel/onetimepad/generate.cheader.h
+> ~/.weechat/python/autoload/ircrypt.py
+	"	841	0
+
+> ~/__Tag_List__
+	"	22	4
+	^	67	24
+	.	52	0
+	+	144	0
+	+	98	0
+	+	52	0
+
+> ~/devel/IRCrypt/ircrypt-weechat/.git/COMMIT_EDITMSG
+	"	3	39
+	^	3	40
+	.	3	40
+	+	43	13
+	+	41	47
+	+	40	5
+	+	1	49
+	+	39	0
+	+	34	69
+	+	38	58
+	+	38	2
+	+	37	68
+	+	39	0
+	+	38	68
+	+	1	17
+	+	33	25
+	+	31	66
+	+	1	29
+	+	21	10
+	+	19	0
+	+	25	0
+	+	23	16
+	+	20	48
+	+	21	0
+	+	20	48
+	+	29	0
+	+	18	59
+	+	15	66
+	+	10	47
+	+	9	45
+	+	10	48
+	+	12	71
+	+	1	19
+	+	7	20
+	+	1	19
+	+	3	40
+
+> ~/devel/IRCrypt/__Tag_List__
+	"	11	4
+	.	47	0
+	+	93	0
+	+	47	0
+
+> ~/devel/IRCrypt/documentation/part01-encrypted-conversations.md
+	"	9	1
+	^	9	2
+	.	9	1
+	+	8	0
+	+	8	0
+	+	9	1
+
+> ~/devel/IRCrypt/documentation/alternative ircrypt protocol.md
+	"	13	0
+
+> ~/devel/IRCrypt/documentation/alternative ircrypt protocol.txt
+	"	33	410
+	^	4	42
+	.	5	0
+	+	5	0
+
+> /usr/local/tg/tg.pub
 	"	1	0
 
 > ~/.zshrc
-	"	37	0
-	^	82	3
-	.	107	0
-	+	104	32
-	+	105	0
-	+	104	0
-	+	105	0
-	+	106	0
-	+	107	0
-	+	90	0
-	+	91	0
-	+	92	0
-	+	93	0
-	+	118	0
-	+	118	0
-	+	90	0
-	+	118	12
-	+	91	0
-	+	92	0
-	+	93	0
-	+	104	0
-	+	105	0
-	+	107	0
-	+	106	0
-	+	107	46
-	+	107	46
-	+	107	46
-	+	107	46
-	+	118	0
-	+	118	0
-	+	107	47
-	+	107	57
-	+	107	57
-	+	107	57
-	+	118	58
-	+	118	44
-	+	118	62
-	+	118	74
-	+	118	0
-	+	107	46
-	+	118	9
-	+	107	54
-	+	107	54
-	+	107	54
-	+	107	54
-	+	107	54
-	+	107	54
-	+	107	54
-	+	107	54
-	+	107	61
-	+	107	61
-	+	107	61
-	+	107	61
-	+	118	15
-	+	118	13
-	+	118	15
-	+	94	0
-	+	95	0
-	+	107	48
-	+	107	48
-	+	118	0
-	+	118	0
-	+	94	0
-	+	95	0
-	+	107	48
-	+	107	48
-	+	107	115
-	+	104	63
-	+	107	115
-	+	107	124
-	+	107	126
-	+	118	0
-	+	118	0
-	+	107	46
-	+	107	46
-	+	107	127
-	+	107	128
-	+	107	72
-	+	107	126
-	+	107	127
-	+	107	125
-	+	118	0
-	+	107	76
-	+	107	47
-	+	107	88
-	+	107	125
-	+	107	113
-	+	107	114
-	+	5	20
-	+	5	31
-	+	6	0
-	+	5	26
-	+	6	0
-	+	5	19
-	+	6	0
-	+	6	1
-	+	6	11
-	+	6	11
-	+	6	0
-	+	82	3
-	+	107	47
-	+	107	46
-	+	107	0
+	"	15	16
+	^	15	17
+	.	15	16
+	+	15	16
 
-> ~/.vimrc
-	"	42	0
-	^	76	49
-	.	76	49
-	+	1	0
-	+	1	0
-	+	1	1
-	+	1	0
-	+	1	59
-	+	1	1
-	+	1	60
-	+	1	0
-	+	1	19
-	+	1	0
-	+	1	22
-	+	1	16
-	+	1	9
-	+	1	21
-	+	1	60
-	+	1	12
-	+	1	25
-	+	1	0
-	+	1	12
-	+	1	16
-	+	1	15
-	+	1	2
-	+	1	24
-	+	1	27
-	+	1	25
-	+	1	8
-	+	439	0
-	+	1	0
-	+	2	0
-	+	4	12
-	+	6	15
-	+	8	0
-	+	45	0
-	+	68	0
-	+	70	0
-	+	69	0
-	+	68	19
-	+	70	10
-	+	70	47
-	+	68	21
-	+	72	21
-	+	70	48
-	+	74	65
-	+	76	49
+> ~/.zsh_history
+	"	4031	8
+	.	9954	0
+	+	10206	0
+	+	10208	0
+	+	2424	0
+	+	2428	0
+	+	2428	0
+	+	2428	0
+	+	2427	0
+	+	2933	0
+	+	8279	0
+	+	8406	0
+	+	8811	0
+	+	8986	0
+	+	8996	0
+	+	9184	0
+	+	9725	0
+	+	664	0
+	+	669	0
+	+	670	0
+	+	674	0
+	+	904	0
+	+	1938	0
+	+	2409	0
+	+	2419	0
+	+	2424	0
+	+	2797	0
+	+	2794	0
+	+	2797	0
+	+	7190	0
+	+	9945	0
+	+	2707	0
+	+	2708	0
+	+	2736	0
+	+	2738	0
+	+	6465	0
+	+	10243	0
+	+	10251	0
+	+	10248	0
+	+	10247	0
+	+	10247	0
+	+	10243	0
+	+	10253	0
+	+	10253	0
+	+	10263	0
+	+	10247	0
+	+	10248	0
+	+	10278	0
+	+	9098	0
+	+	9338	0
+	+	9820	0
+	+	8669	0
+	+	8671	0
+	+	9050	0
+	+	9101	0
+	+	9568	0
+	+	8687	0
+	+	8687	0
+	+	8645	80
+	+	8645	0
+	+	9347	0
+	+	9385	0
+	+	10093	0
+	+	10255	0
+	+	10256	0
+	+	233	0
+	+	333	0
+	+	8676	0
+	+	9954	0
 
-> ~/.vimrc_b
-	"	1	0
-	.	2	0
-	+	2	0
+> ~/.gnupg/gpg.conf
+	"	191	0
 
-> ~/.esd_auth
-	"	3	0
+> ~/.gnupg/gpg-agent.conf
+	"	7	0
+	^	7	18
+	.	7	17
+	+	6	20
+	+	7	17
+
+> ~/.weechat/ircrypt.conf
+	"	11	0
+	^	13	33
+	.	14	0
+	+	13	4
+	+	11	21
+	+	6	0
+	+	4	0
+	+	4	2
+	+	11	0
+	+	10	18
+	+	13	32
+	+	14	0
