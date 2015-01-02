@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/sven/devel/IRCrypt'
-let g:netrw_dirhist_2='/home/sven/devel/IRCrypt/ircrypt-weechat'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/sven/devel/Rock-paper-scissors-server/rps/static'
+let g:netrw_dirhist_2='/home/sven/Documents/Bewerbung'
+let g:netrw_dirhist_3='/home/sven/devel/IRCrypt/documentation'
+let g:netrw_dirhist_4='/home/sven/devel/IRCrypt/ircrypt-weechat'
+let g:netrw_dirhist_5='/home/sven/.config/mpv'
+let g:netrw_dirhist_6='/home/sven/devel/rps-docker'
+let g:netrw_dirhist_7='/home/sven/devel/rps-server'
+let g:netrw_dirhist_8='/home/sven/devel/rps-docker'
+let g:netrw_dirhist_9='/home/sven/devel/startrek'

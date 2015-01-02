@@ -7,13 +7,14 @@ echo -e "Welcome \033[1m$USER\033[0m"
 # Set path variable
 # -----------------
 typeset -U path
-path=(	/sbin 
+path=(	/sbin
 			/usr/sbin
 			/usr/local/sbin
 			/usr/local/bin
 			/usr/local/texlive/2013/bin/x86_64-linux
 			/usr/local/tg/
 			/home/sven/devel/cryptmount
+			/home/sven/devel/keysecure
 			$path)
 
 # ----------------
@@ -67,11 +68,11 @@ RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}]"
 alias ls='ls --color=auto'
 alias ll='ls -h -l --color=auto'
 alias la='ls -a --color=auto'
+alias lla='ls -l -h -a --color=auto'
 alias lsd="ls -d */"		# List only the directory.
-alias mplayer='mplayer -ass-border-color 00000000 -subfont-outline 4'
 alias grep='grep --color'
-alias irssi='TERM=screen irssi'
 alias weechat='TERM=screen weechat'
+alias wee='ssh Server -t "tmux attach-session -t weechat"'
 
 #---------------
 # Set completion

@@ -1,80 +1,91 @@
-" For multi-byte character support (CJK support, for example):
-set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set tabstop=3       " Number of spaces that a <Tab> in the file counts for.
+set nocompatible  " I do not care about Vi compatibility
+set history=10000 " Increase history size
+set nu            " Enable line numbers by default
+set showcmd       " Display commands on last screen line
+set ruler         " Show line and column number of cursor position
+set linebreak     " break at word boundaries rather that in words
+set showmode      " Show a message about the current mode
+set mouse=a       " Enable Mouse
 
-set shiftwidth=3    " Number of spaces to use for each step of (auto)indent.
 
-set smarttab        " When on, a <Tab> in front of a line inserts blanks
-                    " according to 'shiftwidth'. 'tabstop' is used in other
-                    " places. A <BS> will delete a 'shiftwidth' worth of space
-                    " at the start of the line.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set showcmd         " Show (partial) command in status line.
+set term=xterm-256color " | Vim may always use 256 colors as all modern
+set t_Co=256            " | terminals should support this. But it may be
+                        " | falsely detected because of screen or tmux.
 
-set number          " Show line numbers.
+highlight Pmenu ctermbg=234 ctermfg=220
+highlight PmenuSel ctermfg=11 ctermbg=0
 
-set showmatch       " When a bracket is inserted, briefly jump to the matching
-                    " one. The jump is only done if the match can be seen on the
-                    " screen. The time to show the match can be set with
-                    " 'matchtime'.
 
-set hlsearch        " When there is a previous search pattern, highlight all
-                    " its matches.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Encoding
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set incsearch       " While typing a search command, show immediately where the
-                    " so far typed pattern matches.
+set enc=utf-8          " | Set default to Unicode
+set fenc=utf-8         " |
+set termencoding=utf-8 " |
 
-set ignorecase      " Ignore case in search patterns.
 
-set smartcase       " Override the 'ignorecase' option if the search pattern
-                    " contains upper case characters.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set backspace=2     " Influences the working of <BS>, <Del>, CTRL-W
-                    " and CTRL-U in Insert mode. This is a list of items,
-                    " separated by commas. Each item allows a way to backspace
-                    " over something.
+set autoindent     " | Autoindent according to file type
+filetype on        " |
+filetype indent on " |
+filetype detect    " |
 
-set autoindent      " Copy indent from current line when starting a new line
-                    " (typing <CR> in Insert mode or when using the "o" or "O"
-                    " command).
-"
-"set textwidth=79"    " Maximum width of text that is being inserted. A longer
-                    " line will be broken after white space to get this width.
+set tabstop=3      " Set the width of a tab to three spaces
+set shiftwidth=3   " Set the width of a shift (< and > keys) to one tab
 
-set formatoptions=c,q,r,t " This is a sequence of letters which describes how
-                    " automatic formatting is to be done.
-                    "
-                    " letter    meaning when present in 'formatoptions'
-                    " ------    ---------------------------------------
-                    " c         Auto-wrap comments using textwidth, inserting
-                    "           the current comment leader automatically.
-                    " q         Allow formatting of comments with "gq".
-                    " r         Automatically insert the current comment leader
-                    "           after hitting <Enter> in Insert mode. 
-                    " t         Auto-wrap text using textwidth (does not apply
-                    "           to comments)
-
-set ruler           " Show the line and column number of the cursor position,
-                    " separated by a comma.
-
-set background=dark " When set to "dark", Vim will try to use colors that look
-                    " good on a dark background. When set to "light", Vim will
-                    " try to use colors that look good on a light background.
-                    " Any other value is illegal.
-
-set mouse=a         " Enable the use of the mouse.
-
-set wrapscan        " Jump so beginning of file, when the end of file is reached
-
-set redraw          " Better screen construction
-
-set showmode        " Displays the operation mode
-
-set whichwrap=b,s,<,>,[,]   " Traverse line breaks with arrow keys
-
-highlight ForbiddenWhitespace ctermbg=red
+highlight ForbiddenWhitespace ctermbg=red  " Highlight trailing whitespace
 match ForbiddenWhitespace /\s\+$/
+" Do not highlight spaces at the end of line while typing on that line.
+" autocmd InsertEnter * match ForbiddenWhitespace /\s\+\%#\@<!$/
 
-filetype plugin indent on   " Syntax highlighting
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bracket Matching
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set matchpairs+=<:>
+set showmatch
+set matchtime=3
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Paste Mode
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Map paste mode to F2
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable syntax highlight by default
 syntax on
+let g:syntax = 1
+
+" Toggle syntax highlighting with <F4>
+map <F4> :call ToggleSyntax()<cr>
+function! ToggleSyntax()
+	try
+		if g:syntax_on
+			syntax off
+		endif
+	catch /.*/
+		syntax on
+	endtry
+endfunction
