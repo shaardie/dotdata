@@ -3,23 +3,6 @@
 # --------
 echo -e "Welcome \033[1m$USER\033[0m"
 
-# -----------------
-# Set path variable
-# -----------------
-typeset -U path
-path=(	/sbin
-			/usr/sbin
-			/usr/local/sbin
-			/usr/local/bin
-			/usr/local/texlive/2013/bin/x86_64-linux
-			/usr/local/tg/
-			/home/sven/devel/cryptmount
-			/home/sven/devel/keysecure
-			$path)
-
-# ----------------
-# Colorful manpages
-# ----------------
 man() {
 	env \
 	LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -32,34 +15,17 @@ man() {
 	man "$@"
 }
 
-# --------------------------
-# Some history related stuff
-# -------------------------
-setopt HIST_IGNORE_DUPS
-setopt APPEND_HISTORY
-
-#-----------------------------
-# Colors
-# ----------------------------
-LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
-
-# --------------------------
-# Some environment variables
-# --------------------------
-export HISTSIZE=10000
-export SAVEHIST=10000
-export USER=$USERNAME
-export HOSTNAME=$HOST
-export EDITOR="vim"
-export BROWSER="firefox"
-export HISTFILE=${HOME}/.zsh_history
-export LS_COLORS
+# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;    31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
 
 # ----------------
 # Coloreful prompt
 # ----------------
 autoload -U colors && colors
-PROMPT="%{$fg[red]%}%n%{$reset_color%} %{$fg[green]%}%~%{$reset_color%}: "
+PROMPT="%{$fg[red]%}%n@%m%{$reset_color%} %{$fg[green]%}%~%{$reset_color%}: "
 RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}]"
 
 #--------
@@ -69,10 +35,7 @@ alias ls='ls --color=auto'
 alias ll='ls -h -l --color=auto'
 alias la='ls -a --color=auto'
 alias lla='ls -l -h -a --color=auto'
-alias lsd="ls -d */"		# List only the directory.
 alias grep='grep --color'
-alias weechat='TERM=screen weechat'
-alias wee='ssh Server -t "tmux attach-session -t weechat"'
 
 #---------------
 # Set completion
@@ -82,40 +45,14 @@ compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# -----------
-# Define keys
-# -----------
-
-typeset -A key
-key[Home]=${terminfo[khome]}
-key[End]=${terminfo[kend]}
-key[Insert]=${terminfo[kich1]}
-key[Delete]=${terminfo[kdch1]}
-key[Up]=${terminfo[kcuu1]}
-key[Down]=${terminfo[kcud1]}
-key[Left]=${terminfo[kcub1]}
-key[Right]=${terminfo[kcuf1]}
-key[PageUp]=${terminfo[kpp]}
-key[PageDown]=${terminfo[knp]}
-
 # ---------------------
 # Setup key accordingly
 # ---------------------
-[[ -n "${key[Home]}"     ]]  && bindkey  "${key[Home]}"     beginning-of-line
-[[ -n "${key[End]}"      ]]  && bindkey  "${key[End]}"      end-of-line
-[[ -n "${key[Insert]}"   ]]  && bindkey  "${key[Insert]}"   overwrite-mode
-[[ -n "${key[Delete]}"   ]]  && bindkey  "${key[Delete]}"   delete-char
-[[ -n "${key[Up]}"       ]]  && bindkey  "${key[Up]}"       up-line-or-search
-[[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     down-line-or-search
-[[ -n "${key[Left]}"     ]]  && bindkey  "${key[Left]}"     backward-char
-[[ -n "${key[Right]}"    ]]  && bindkey  "${key[Right]}"    forward-char
-# Searching for same beginning of a string beginning in previous history
-[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   up-line-or-search 
-# Searching for same beginning of a string beginning in following history
-[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" down-line-or-search
-
-# ---------
-# bind keys
-# ---------
-bindkey "[1;5D" backward-word # ctrl-left
-bindkey "[1;5C" forward-word  # ctrl-right
+bindkey  "^[[7~" beginning-of-line
+bindkey  "^[[5~" end-of-line
+bindkey  "^[[2~" overwrite-mode
+bindkey  "^[[6~" delete-char
+bindkey  "^[[A"  up-line-or-search
+bindkey  "^[[B"  down-line-or-search
+bindkey  "^[Od"  backward-word # ctrl-left
+bindkey "^[Oc"   forward-word  # ctrl-right
