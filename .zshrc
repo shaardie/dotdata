@@ -1,25 +1,32 @@
-# --------
-# Greeting
-# --------
+# ---------
+# Greetings
+# ---------
 echo -e "Welcome \033[1m$USER\033[0m"
 
+# ---------------
+# Personal things
+# ---------------
+export NAME="Sven Haardiek"
+export EMAIL="sven@haardiek.de"
+export EDITOR="vi"
+export VISUAL="vi"
+export BROWSER="firefox"
+
+# -----------------
+# Colorful manpages
+# -----------------
 man() {
 	env \
-	LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-	LESS_TERMCAP_md=$(printf "\e[1;31m") \
-	LESS_TERMCAP_me=$(printf "\e[0m") \
-	LESS_TERMCAP_se=$(printf "\e[0m") \
-	LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-	LESS_TERMCAP_ue=$(printf "\e[0m") \
-	LESS_TERMCAP_us=$(printf "\e[1;32m") \
-	man "$@"
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+		man "$@"
 }
 
-# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILE=~/.zsh_history
-LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;    31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
 
 # ----------------
 # Coloreful prompt
@@ -28,31 +35,91 @@ autoload -U colors && colors
 PROMPT="%{$fg[red]%}%n@%m%{$reset_color%} %{$fg[green]%}%~%{$reset_color%}: "
 RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}]"
 
-#--------
-# Aliases
-#--------
-alias ls='ls --color=auto'
-alias ll='ls -h -l --color=auto'
-alias la='ls -a --color=auto'
-alias lla='ls -l -h -a --color=auto'
-alias grep='grep --color'
-
 #---------------
 # Set completion
 #---------------
+LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;    31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
 autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
+setopt completealiases
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# ---------------------
-# Setup key accordingly
-# ---------------------
-bindkey  "^[[7~" beginning-of-line
-bindkey  "^[[5~" end-of-line
-bindkey  "^[[2~" overwrite-mode
-bindkey  "^[[6~" delete-char
-bindkey  "^[[A"  up-line-or-search
-bindkey  "^[[B"  down-line-or-search
-bindkey  "^[Od"  backward-word # ctrl-left
-bindkey "^[Oc"   forward-word  # ctrl-right
+# -------
+# History
+# -------
+HISTSIZE="10000"
+SAVEHIST="10000"
+HISTFILE=~/.zsh_history
+
+# Warn on rm * commands
+setopt RM_STAR_WAIT
+
+# -------
+# Aliases
+# -------
+alias ls='ls --color=auto'
+alias ll='ls -h -l --color=auto'
+alias la='ls -a --color=auto'
+alias grep='grep --color'
+
+# ------------
+# Key bindings
+# ------------
+
+bindkey -e                                            # Use emacs key bindings
+
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+  function zle-line-init() {
+    echoti smkx
+  }
+  function zle-line-finish() {
+    echoti rmkx
+  }
+  zle -N zle-line-init
+  zle -N zle-line-finish
+fi
+bindkey -v                                            # Use vi key bindings
+bindkey '\ew' kill-region                             # [Esc-w] - Kill from the cursor to the mark
+bindkey '^r' history-incremental-search-backward      # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
+if [[ "${terminfo[kpp]}" != "" ]]; then
+  bindkey "${terminfo[kpp]}" up-line-or-history       # [PageUp] - Up a line of history
+fi
+if [[ "${terminfo[knp]}" != "" ]]; then
+  bindkey "${terminfo[knp]}" down-line-or-history     # [PageDown] - Down a line of history
+fi
+if [[ "${terminfo[kcuu1]}" != "" ]]; then
+  bindkey "${terminfo[kcuu1]}" up-line-or-search      # start typing + [Up-Arrow] - fuzzy find history forward
+fi
+if [[ "${terminfo[kcud1]}" != "" ]]; then
+  bindkey "${terminfo[kcud1]}" down-line-or-search    # start typing + [Down-Arrow] - fuzzy find history backward
+fi
+
+if [[ "${terminfo[khome]}" != "" ]]; then
+  bindkey "${terminfo[khome]}" beginning-of-line      # [Home] - Go to beginning of line
+fi
+if [[ "${terminfo[kend]}" != "" ]]; then
+  bindkey "${terminfo[kend]}"  end-of-line            # [End] - Go to end of line
+fi
+bindkey ' ' magic-space                               # [Space] - do history expansion
+bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move forward one word
+bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word
+bindkey  "^[Od"  backward-word                        # [Ctrl-RightArrow] - move forward one word
+bindkey "^[Oc"   forward-word                         # [Ctrl-LeftArrow] - move backward one word
+if [[ "${terminfo[kcbt]}" != "" ]]; then
+  bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
+fi
+bindkey '^?' backward-delete-char                     # [Backspace] - delete backward
+if [[ "${terminfo[kdch1]}" != "" ]]; then
+  bindkey "${terminfo[kdch1]}" delete-char            # [Delete] - delete forward
+else
+  bindkey "^[[3~" delete-char
+  bindkey "^[3;5~" delete-char
+  bindkey "\e[3~" delete-char
+fi
+# Edit the current command line in $EDITOR
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
+# file rename magick
+bindkey "^[m" copy-prev-shell-word
