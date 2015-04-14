@@ -3,20 +3,32 @@
 # Small bash script to configure my programs
 
 # VARS
+DIRS=(.gnupg)
 # config files and dirs
-CONFS=(.gitconfig .gnupg/gpg.conf .i3 i3setup.sh .tmux.conf .vim .vimrc .Xdefaults
-.zcompdump .zshrc)
+CONFS=(Lamotta Sturm Windows .gitconfig .gnupg/gpg.conf .gnupg/gpg-agent.conf .i3 i3setup.sh
+.tmux.conf .vim .vimrc .Xdefaults .zcompdump .zshrc)
 BACKUP=~/.dotdata.backup
 
-# Create backup folder
+# Create backup dir
 mkdir -p $BACKUP
+
+# Create dirs
+for item in ${DIRS[*]}
+do
+	mkdir -p ~/$item
+	mkdir -p $BACKUP/$item
+done
 
 # backup old config files and dirs in CONFS
 for item in ${CONFS[*]}
 do
+	if [ -h ~/$item ]
+	then
+		rm --verbose ~/$item
+	fi
 	if [ -a ~/$item ]
 	then
-		mv ~/$item $BACKUP/$item
+		mv --verbose ~/$item $BACKUP/$item
 	fi
-	ln --symbolic --verbose $item ~/$item
+	ln --symbolic --verbose `pwd`/$item ~/$item
 done
