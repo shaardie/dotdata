@@ -1,0 +1,24 @@
+
+# General
+export NAME="Sven Haardiek"
+export EMAIL="sven@haardiek.de"
+export EDITOR="vi"
+export VISUAL="vi"
+export BROWSER="firefox"
+
+# Go stuff
+export GOPATH=$HOME/devel/go
+export PATH=$PATH:$GOPATH/bin
+
+# debian stuff
+export DEBFULLNAME="$NAME"
+export DEBEMAIL="$EMAIL"
+export GOPATH=/home/sven/devel/go
+
+# Git stuff
+GIT_AUTHOR_NAME="$NAME"
+GIT_AUTOR_EMAIL="$EMAIL"
+
+# HG stuff
+HGUSER="$NAME"
+HGEMAIL="$EMAIL"
