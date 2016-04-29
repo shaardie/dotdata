@@ -22,6 +22,11 @@ alias la='ls -a --color=auto'
 alias grep='grep --color'
 
 
+# ------
+# Colors
+# ------
+eval "$(dircolors -b)"
+
 # -----------------
 # Colorful manpages
 # -----------------
@@ -76,8 +81,8 @@ RPROMPT=$'$(vcs_info_wrapper)'[%F{yellow}%?%f]
 #---------------
 # Set completion
 #---------------
-autoload -U compinit
-compinit
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==02=01}:${(s.:.)LS_COLORS}")'
+autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 setopt completealiases
 
