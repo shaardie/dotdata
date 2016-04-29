@@ -115,4 +115,4 @@ bar {
 bindsym $mod+F12 exec --no-startup-id i3lock --color=000000 --dpms
 
 # Execute script on startup
-exec --no-startup-id ~/i3setup.sh
+exec --no-startup-id ~/.i3/i3setup.sh
