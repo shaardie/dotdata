@@ -16,9 +16,10 @@ export DEBEMAIL="$EMAIL"
 export GOPATH=/home/sven/devel/go
 
 # Git stuff
-GIT_AUTHOR_NAME="$NAME"
-GIT_AUTOR_EMAIL="$EMAIL"
+export GIT_AUTHOR_NAME="$NAME"
+export GIT_AUTOR_EMAIL="$EMAIL"
+export GIT_COMMITTER_NAME"shaardie"
 
 # HG stuff
-HGUSER="$NAME"
-HGEMAIL="$EMAIL"
+export HGUSER="$NAME"
+export HGEMAIL="$EMAIL"
