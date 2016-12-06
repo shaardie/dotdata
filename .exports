@@ -19,7 +19,3 @@ export GOPATH=/home/sven/devel/go
 export GIT_AUTHOR_NAME="$NAME"
 export GIT_AUTOR_EMAIL="$EMAIL"
 export GIT_COMMITTER_NAME"shaardie"
-
-# HG stuff
-export HGUSER="$NAME"
-export HGEMAIL="$EMAIL"
