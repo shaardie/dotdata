@@ -4,7 +4,7 @@ export NAME="Sven Haardiek"
 export EMAIL="sven@haardiek.de"
 export EDITOR="vi"
 export VISUAL="vi"
-export BROWSER="firefox"
+export BROWSER="chromium"
 
 # Go stuff
 export GOPATH=$HOME/devel/go
@@ -14,8 +14,3 @@ export PATH=$PATH:$GOPATH/bin
 export DEBFULLNAME="$NAME"
 export DEBEMAIL="$EMAIL"
 export GOPATH=/home/sven/devel/go
-
-# Git stuff
-export GIT_AUTHOR_NAME="$NAME"
-export GIT_AUTOR_EMAIL="$EMAIL"
-export GIT_COMMITTER_NAME"shaardie"
