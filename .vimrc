@@ -18,10 +18,11 @@ match ForbiddenWhitespace /\s\+$/
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Standard Intentation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-setlocal tabstop=2
-setlocal softtabstop=2
-setlocal shiftwidth=2
-setlocal expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set pastetoggle=<f5>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bracket Matching

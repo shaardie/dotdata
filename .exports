@@ -13,4 +13,3 @@ export PATH=$PATH:$GOPATH/bin
 # debian stuff
 export DEBFULLNAME="$NAME"
 export DEBEMAIL="$EMAIL"
-export GOPATH=/home/sven/devel/go
